@@ -15,17 +15,17 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		// Android内部のサウンド
-		Button soundButon = (Button)findViewById(R.id.button1);
+		Button soundButon = (Button) findViewById(R.id.button1);
 		soundButon.setOnClickListener(this);
 		// SDカード内の写真
-		Button photoButton = (Button)findViewById(R.id.button2);
+		Button photoButton = (Button) findViewById(R.id.button2);
 		photoButton.setOnClickListener(this);
 		// 連絡先
-		Button phoneButton = (Button)findViewById(R.id.button3);
+		Button phoneButton = (Button) findViewById(R.id.button3);
 		phoneButton.setOnClickListener(this);
-		
+
 	}
 
 	@Override
@@ -36,13 +36,15 @@ public class MainActivity extends Activity implements OnClickListener {
 			intent.putExtra("data", "sound");
 			startActivity(intent);
 			break;
-			
+
 		case R.id.button2:
+			intent = new Intent(this, NextActivity.class);
 			intent.putExtra("data", "photo");
 			startActivity(intent);
 			break;
-			
+
 		case R.id.button3:
+			intent = new Intent(this, NextActivity.class);
 			intent.putExtra("data", "phone");
 			startActivity(intent);
 			break;
